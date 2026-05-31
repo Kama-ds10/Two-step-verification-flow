@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checking Database - Verifyd</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/step2.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Logo -->
+    <!-- <div class="logo">
+      <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
+        <path d="M2 10L8 16L22 2" stroke="#0a7a3b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M8 16L12 20L18 12" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>verifyd</span>
+    </div> -->
+
+    <!-- Stepper -->
+    <div class="stepper">
+      <div class="step completed">
+        <div class="step-number">1</div>
+        <span>Enter details</span>
+      </div>
+      <div class="step-line completed"></div>
+      <div class="step active">
+        <div class="step-number">2</div>
+        <span>Checking database</span>
+      </div>
+      <div class="step-line"></div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <span>View Result</span>
+      </div>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+      <!-- Circular Loader -->
+      <div class="loader-wrapper">
+        <svg class="loader" width="80" height="80" viewBox="0 0 80 80">
+          <circle class="loader-bg" cx="40" cy="40" r="34"></circle>
+          <circle class="loader-progress" cx="40" cy="40" r="34"></circle>
+        </svg>
+      </div>
+
+      <!-- NAFDAC Number -->
+      <h2 class="nafdac-number">A1 - 1234</h2>
+      <p class="subtext">Querying NAFDAC registration database...</p>
+
+      <!-- Steps List -->
+      <div class="steps-list">
+        <div class="step-item" data-step="0">
+          <div class="step-circle"></div>
+          <span>Validating number format</span>
+        </div>
+        <div class="step-item" data-step="1">
+          <div class="step-circle"></div>
+          <span>Searching product registry</span>
+        </div>
+        <div class="step-item" data-step="2">
+          <div class="step-circle"></div>
+          <span>Verifying company records</span>
+        </div>
+        <div class="step-item" data-step="3">
+          <div class="step-circle"></div>
+          <span>Checking expiry and status</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./css/step2.css"></script>
+</body>
+</html>
