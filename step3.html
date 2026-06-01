@@ -4,59 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Verification Result - Verifyd</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/step3.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <div class="container">
-
     <!-- Logo -->
-    <!-- <div class="logo">
-      <svg width="24" height="20" viewBox="0 0 24 20" fill="none">
-        <path d="M2 10L8 16L22 2" stroke="#0a7a3b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M8 16L12 20L18 12" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span>verifyd</span>
-    </div> -->
+    <!-- <div class="logo">✓ verifyd</div> -->
 
-    <!-- Stepper -->
+    <!-- Stepper - all completed -->
     <div class="stepper">
       <div class="step completed">
-        <div class="step-number">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7L5.5 10.5L12 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+        <div class="step-num">✓</div>
         <span>Enter details</span>
       </div>
       <div class="step-line completed"></div>
       <div class="step completed">
-        <div class="step-number">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7L5.5 10.5L12 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+        <div class="step-num">✓</div>
         <span>Checking database</span>
       </div>
       <div class="step-line completed"></div>
-      <div class="step active">
-        <div class="step-number">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2 7L5.5 10.5L12 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
+      <div class="step completed">
+        <div class="step-num">✓</div>
         <span>View Result</span>
       </div>
     </div>
 
     <!-- Main Grid -->
-    <div class="grid">
-      
+    <div class="grid result-grid">
       <!-- Left: Result Card -->
       <div class="result-card">
-        
         <!-- Success Header -->
         <div class="success-header">
           <div class="success-icon">
@@ -66,58 +43,51 @@
           </div>
           <div>
             <p class="success-label">PRODUCT VERIFIED AND AUTHENTIC</p>
-            <h2 class="product-name">Emzor Paracetamol 500g</h2>
-            <p class="meta">Verified 19 May 2024, 11:43 WAT · Ref: #NG-2024-00847</p>
+            <h2 class="product-title" id="product-title">Emzor Paracetamol 500g</h2>
+            <p class="verified-meta">Verified 19 May 2024, 11:43 WAT · Ref: #NG-2024-00847</p>
           </div>
         </div>
 
         <!-- Details List -->
-        <div class="details-list">
+        <div class="details">
           <div class="detail-row">
             <span class="detail-label">NAFDAC number</span>
-            <span class="detail-value green">A1-1234</span>
+            <span class="detail-value green" id="nafdac-out">A1-1234</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Product / brand name</span>
-            <span class="detail-value">Emzor Paracetamol 500mg</span>
+            <span class="detail-value" id="product-out">Emzor Paracetamol 500mg</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Product category</span>
-            <span class="detail-value">Drug · Over the Counter</span>
+            <span class="detail-value" id="category-out">Drug · Over the Counter</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Manufacturing company</span>
-            <span class="detail-value">Emzor Pharmaceutical Ind. Ltd.</span>
+            <span class="detail-value" id="company-out">Emzor Pharmaceutical Ind. Ltd.</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Company location</span>
-            <span class="detail-value">Plot 3, Abimbola way, Isolo, Lagos</span>
+            <span class="detail-value" id="company-location">Plot 3, Abimbola way, Isolo, Lagos</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Date of registration</span>
-            <span class="detail-value">14 March 2019</span>
+            <span class="detail-value" id="reg-date">14 March 2019</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Registration expiry</span>
-            <span class="badge-valid">Valid Until March 2026</span>
+            <span class="badge-valid" id="expiry">Valid Until March 2026</span>
           </div>
-
           <div class="detail-row">
             <span class="detail-label">Reported by</span>
-            <span class="detail-value">Justice Nweke · Port-Harcourt</span>
+            <span class="detail-value" id="reported-by">Justice Nweke · Port-Harcourt</span>
           </div>
         </div>
 
         <!-- Actions -->
         <div class="actions">
-          <button class="btn-primary">Share result</button>
-          <button class="btn-outline">Report Concern</button>
+          <button class="btn-share" onclick="window.print()">Share result</button>
+          <button class="btn-report" onclick="alert('Report submitted to NAFDAC')">Report Concern</button>
         </div>
       </div>
 
@@ -129,5 +99,6 @@
       </div>
     </div>
   </div>
+<script src="js/step3.js"></script>
 </body>
 </html>

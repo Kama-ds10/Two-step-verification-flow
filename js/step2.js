@@ -1,49 +1,48 @@
-// Simulates the loading sequence for Step 2
-const steps = document.querySelectorAll('.step-item');
-const loaderCircle = document.querySelector('.loader-progress');
-const circumference = 2 * Math.PI * 34; // 2πr where r=34
+// Get NAFDAC from localStorage and format it
+const nafdac = localStorage.getItem('nafdac') || 'A1-1234';
+document.getElementById('nafdac-display').textContent = nafdac.replace('-', ' - ');
 
 let currentStep = 0;
-const totalSteps = steps.length;
+const totalSteps = 4;
 
-// Set initial dasharray
-loaderCircle.style.strokeDasharray = circumference;
-loaderCircle.style.strokeDashoffset = circumference;
-
-function activateStep(stepIndex) {
-  // Mark previous steps as completed
-  for (let i = 0; i < stepIndex; i++) {
-    steps[i].classList.remove('active');
-    steps[i].classList.add('completed');
-  }
-
-  // Mark current step as active
-  steps[stepIndex].classList.add('active');
-
-  // Update circular progress
-  const progress = ((stepIndex + 1) / totalSteps) * circumference;
-  const offset = circumference - progress;
-  loaderCircle.style.strokeDashoffset = offset;
+function activateStep(step) {
+  const el = document.getElementById(`check-${step + 1}`);
+  if (!el) return;
+  
+  el.classList.add('active');
+  
+  // Mark as completed after 1.8 seconds
+  setTimeout(() => {
+    el.classList.remove('active');
+    el.classList.add('completed');
+  }, 1800);
 }
 
-function startLoader() {
+function startCheck() {
   activateStep(0);
-
+  
   const interval = setInterval(() => {
     currentStep++;
-
+    
     if (currentStep < totalSteps) {
       activateStep(currentStep);
     } else {
       clearInterval(interval);
-      // All steps done - redirect to step 3 after 1s
+      
+      // Save mock result data for step3
+      localStorage.setItem('productName', 'Emzor Paracetamol 500mg');
+      localStorage.setItem('companyName', 'Emzor Pharmaceutical Ind. Ltd.');
+      localStorage.setItem('expiryDate', 'March 2026');
+      localStorage.setItem('category', 'Drug · Over the Counter');
+      localStorage.setItem('regDate', '14 March 2019');
+      localStorage.setItem('companyLocation', 'Plot 3, Abimbola way, Isolo, Lagos');
+      
+      // Go to step3 after 1 second
       setTimeout(() => {
-        // window.location.href = 'step3.html';
-        console.log('Loading complete - redirect to results page');
+        window.location.href = 'step3.html';
       }, 1000);
     }
-  }, 2000); // 2 seconds per step
+  }, 2000); // 2 seconds per step = 8 seconds total
 }
 
-// Start when page loads
-document.addEventListener('DOMContentLoaded', startLoader);
+startCheck();
