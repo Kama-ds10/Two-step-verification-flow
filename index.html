@@ -33,7 +33,7 @@
       <div class="form-card">
         <p class="step-label">STEP 1 · ENTER NAFDAC NUMBER</p>
         <h1>Verify before you trust.</h1>
-        <p class="subtitle">Confirm if a product's NAFDAC registration number is authentic</p>
+        <p class="subtitle">Confirm if a product's NAFDAC registration<br>number is authentic</p>
         
         <form id="verify-form">
           <div class="field">
@@ -57,17 +57,20 @@
             </div>
             <div class="field">
               <label>YOUR LOCATION *</label>
-              <input type="text" id="location" placeholder="Rivers State, Port-Harcourt" required>
+                <input type="text" id="location" placeholder="Rivers State, Port-Harcourt" required>
+               <small class="detect"><img src="./assets/images/location.jpeg" alt="location icon">
+                 Detect my location</small>
             </div>
+        
           </div>
-          <button type="button" class="detect">📍 Detect my location</button>
+          <!-- <button type="button" class="detect">
+            <img src="./assets/images/location.jpeg" alt="location icon">
+            Detect my location</button> -->
 
           <button type="submit" class="btn-verify">Verify now</button>
 
           <button type="button" class="btn-scan">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-              <path d="M3 6V3H6M12 3H15V6M3 12V15H6M12 15H15V12" stroke="#111" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            <img src="./assets/images/scanner.jpeg" alt="scan icon" class="scanner-img">
             <div>
               <strong>Scan barcode instead</strong>
               <span>Open camera to scan product barcode</span>
@@ -120,43 +123,43 @@
         </div>
 
         <!-- Last Checks -->
-        <div class="checks-card">
-          <div class="checks-head">
-            <span>Last Checks</span>
-            <div class="tabs">
-              <button class="tab active">All</button>
-              <button class="tab">Verified</button>
-              <button class="tab">Unverified</button>
-            </div>
-          </div>
+<div class="checks-card">
+  <div class="checks-head">
+    <span>Last Checks</span>
+    <div class="tabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="verified">Verified</button>
+      <button class="tab" data-filter="unverified">Unverified</button>
+    </div>
+  </div>
 
-          <div class="check">
-            <div>
-              <span class="badge ok">• Verified</span>
-              <p class="check-name">Emzor Paracetamol 500mg</p>
-              <p class="check-meta">REG A4-108 · Drug · Emzor Paracetamol</p>
-            </div>
-            <span class="check-time">Today · 5:41</span>
-          </div>
+  <div class="check" data-status="verified">
+    <div>
+      <span class="badge ok">• Verified</span>
+      <p class="check-name">Emzor Paracetamol 500mg</p>
+      <p class="check-meta">REG A4-108 · Drug · Emzor Paracetamol</p>
+    </div>
+    <span class="check-time">Today · 5:41</span>
+  </div>
 
-          <div class="check">
-            <div>
-              <span class="badge bad">• Unverified</span>
-              <p class="check-name">"Peak" Milk Powder 900mg</p>
-              <p class="check-meta">REG B2-9931 · Not in Database</p>
-            </div>
-            <span class="check-time">Today · 10:18</span>
-          </div>
+  <div class="check" data-status="unverified">
+    <div>
+      <span class="badge bad">• Unverified</span>
+      <p class="check-name">"Peak" Milk Powder 900mg</p>
+      <p class="check-meta">REG B2-9931 · Not in Database</p>
+    </div>
+    <span class="check-time">Today · 10:18</span>
+  </div>
 
-          <div class="check">
-            <div>
-              <span class="badge ok">• Verified</span>
-              <p class="check-name">Dabur Honey 250g</p>
-              <p class="check-meta">REG A7-0442 · Food · Dabur Nigeria</p>
-            </div>
-            <span class="check-time">Yesterday · 17:04</span>
-          </div>
-        </div>
+  <div class="check" data-status="verified">
+    <div>
+      <span class="badge ok">• Verified</span>
+      <p class="check-name">Dabur Honey 250g</p>
+      <p class="check-meta">REG A7-0442 · Food · Dabur Nigeria</p>
+    </div>
+    <span class="check-time">Yesterday · 17:04</span>
+  </div>
+</div>
       </div>
     </div>
   </div>
